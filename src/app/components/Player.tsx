@@ -1,14 +1,18 @@
 import React from 'react';
+import { Player as PlayerType } from '../data/players';
 
 interface PlayerProps {
-  name: string;
-  team: string;
+  player: PlayerType;
+  onSelect: (player: PlayerType) => void;
 }
 
-const Player: React.FC<PlayerProps> = ({ name, team }) => {
+const Player: React.FC<PlayerProps> = ({ player, onSelect }) => {
   return (
-    <div className="bg-gray-700 p-2 rounded">
-      <span className="font-bold">{name}</span> - {team}
+    <div 
+      className="bg-gray-700 hover:bg-cyan-600 p-2 rounded cursor-pointer hover:bg-gray-200 transition-colors"
+      onClick={() => onSelect(player)}
+    >
+      <span className="font-bold">{player.name}</span> - {player.team}
     </div>
   );
 };
