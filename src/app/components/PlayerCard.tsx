@@ -10,7 +10,7 @@ interface PlayerCardProps {
 export const PlayerCard: React.FC<PlayerCardProps> = ({ player, isSelected, onSelect }) => (
   <div 
     className={`p-2 rounded cursor-pointer transition-colors ${
-      isSelected ? 'bg-blue-200 hover:bg-blue-300' : 'bg-gray-100 hover:bg-gray-200'
+      isSelected ? 'bg-blue-200 hover:bg-blue-300' : 'bg-gray-700 hover:bg-gray-200 hover:text-slate-700'
     }`}
     onClick={() => onSelect(player)}
   >
