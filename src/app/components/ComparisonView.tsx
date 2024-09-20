@@ -7,13 +7,13 @@ interface ComparisonViewProps {
 }
 
 export const ComparisonView: React.FC<ComparisonViewProps> = ({ selectedPlayers }) => (
-  <div className="flex gap-4">
+  <div className="flex flex-col md:flex-row gap-4">
     {selectedPlayers.map((player, index) => (
       <div key={index} className="flex-1">
         {player ? (
           <PlayerJumbotron player={player} />
         ) : (
-          <div className="bg-gray-100 p-6 rounded-lg shadow-md text-center">
+          <div className="bg-nba-navy-700 p-6 rounded-lg shadow-md text-center text-nba-orange-400">
             Select a player to compare
           </div>
         )}

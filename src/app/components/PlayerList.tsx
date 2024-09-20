@@ -14,12 +14,9 @@ interface PlayerListProps {
 export const PlayerList: React.FC<PlayerListProps> = ({ 
     players, 
     selectedPlayers, 
-    onPlayerSelect,
-    searchTerm,
-    onSearchChange }) => (
+    onPlayerSelect }) => (
     <div>    
-        <SearchBar searchTerm={searchTerm} onSearchChange={onSearchChange} />  
-        <div className="space-y-2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {players.map(player => (
         <PlayerCard 
             key={player.id} 
